@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0e14;
+  color: #d4d8dd;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 24px 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #1f2733;
+  padding-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header .status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #4ade80;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #10151f;
+  border: 1px solid #1f2733;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card .label {
+  font-size: 12px;
+  color: #7d8590;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-card .value {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.stat-card.danger .value { color: #f87171; }
+.stat-card.warning .value { color: #fbbf24; }
+.stat-card.success .value { color: #4ade80; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  background: #1a2130;
+  border: 1px solid #2d3748;
+  color: #d4d8dd;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  background: #232b3d;
+  border-color: #4ade80;
+}
+
+.btn.primary {
+  background: #1d3a2a;
+  border-color: #4ade80;
+  color: #4ade80;
+}
+
+.panel {
+  background: #10151f;
+  border: 1px solid #1f2733;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid #1f2733;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  text-align: left;
+  padding: 10px 18px;
+  color: #7d8590;
+  font-weight: 500;
+  border-bottom: 1px solid #1f2733;
+}
+
+td {
+  padding: 10px 18px;
+  border-bottom: 1px solid #161c26;
+  color: #c9ccd1;
+}
+
+tr:hover td {
+  background: #131a26;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.normal { background: #1d3a2a; color: #4ade80; }
+.badge.violation { background: #3a1d1d; color: #f87171; }
+.badge.tampered { background: #3a2d1d; color: #fbbf24; }
+.badge.alert { background: #3a2d1d; color: #fbbf24; }
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 13px;
+}

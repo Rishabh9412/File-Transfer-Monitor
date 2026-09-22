@@ -1,0 +1,11 @@
+venv/
+node_modules/
+__pycache__/
+*.pyc
+backend/logs/*.json
+backend/sensitive_data/*
+backend/confidential_docs/*
+backend/unauthorized_zone/*
+backend/OneDrive_Sync_Test/*
+frontend/dist/
+.env
