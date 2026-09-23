@@ -104,7 +104,14 @@ def simulate():
 
     return jsonify({"status": "simulation complete"})
 
+def initialize_monitoring():
+    try:
+        start_watcher()
+        start_usb_monitor()
+    except Exception as e:
+        print(f"Monitoring init skipped: {e}")
+
+initialize_monitoring()
+
 if __name__ == "__main__":
-    start_watcher()
-    start_usb_monitor()
     app.run(port=5000, debug=False)
