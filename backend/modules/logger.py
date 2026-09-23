@@ -7,13 +7,19 @@ LOG_FILE = os.path.join(LOG_DIR, "activity_log.json")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 
+def get_current_user():
+    try:
+        return os.getlogin()
+    except OSError:
+        return os.environ.get("USER") or os.environ.get("USERNAME") or "system"
+
 def log_event(event_type, source, destination=None, user=None, process=None, status="normal", details=None):
     entry = {
         "timestamp": datetime.now().isoformat(),
         "event_type": event_type,
         "source": source,
         "destination": destination,
-        "user": user or os.getlogin(),
+        "user": user or get_current_user(),
         "process": process,
         "status": status,
         "details": details
