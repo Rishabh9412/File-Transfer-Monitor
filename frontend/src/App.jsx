@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const API = 'http://127.0.0.1:5000/api'
+const API = 'https://file-transfer-monitor.onrender.com/api'
 
 function App() {
   const [logs, setLogs] = useState([])
